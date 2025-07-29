@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+:root {
+    --primary-color: #ff6b6b;
+    --secondary-color: #ff8e8e;
+    --dark-color: #333;
+    --light-color: #f8f9fa;
+    --success-color: #28a745;
+    --info-color: #17a2b8;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+.navbar {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #2c3e50 !important; /* Dark blue navbar */
+}
+
+.navbar-brand img {
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover img {
+    transform: scale(1.05);
+}
+
+.nav-link {
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    color: white !important; /* Force nav links to stay white */
+}
+
+.nav-link:hover, 
+.nav-link.active {
+    color: white !important; /* Hover stays white */
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 1rem;
+    right: 1rem;
+    height: 2px;
+    background-color: white; /* Active underline is pure white */
+}
+
+
+.account-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+h1 {
+    color: var(--primary-color);
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #eee;
+}
+
+.profile-section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid var(--primary-color);
+}
+
+.form-control, .form-select {
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(255, 107, 107, 0.25);
+}
+
+.btn {
+    border-radius: 8px;
+    padding: 0.6rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn i {
+    margin-right: 8px;
+}
+
+.btn-primary {
+    background-color: white;
+    border-color: white;
+}
+
+.btn-primary:hover {
+    background-color: white;
+    border-color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgb(255, 255, 255);
+}
+
+.btn-success {
+    background-color: var(--success-color);
+    border-color: var(--success-color);
+}
+
+.btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+.order-table {
+    width: 100%;
+    margin-top: 1.5rem;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.order-table th {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+}
+
+.order-table td {
+    padding: 1rem;
+    vertical-align: top;
+    border-bottom: 1px solid #eee;
+}
+
+.order-table tr:hover td {
+    background-color: rgba(255, 107, 107, 0.05);
+}
+
+.order-items-cell {
+    max-width: 300px;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.3rem 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.status-badge {
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.status-processing { 
+    background-color: var(--warning-color); 
+    color: #212529; 
+}
+
+.status-delivered { 
+    background-color: var(--success-color); 
+    color: white; 
+}
+
+.status-cancelled { 
+    background-color: var(--danger-color); 
+    color: white; 
+}
+
+/* 🎟️ Coupon Ticket Styles */
+.coupon-section {
+    margin: 3rem 0;
+}
+
+.ticket-card {
+    position: relative;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px dashed var(--primary-color);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.ticket-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(255, 107, 107, 0.05) 100%);
+    z-index: 0;
+}
+
+.ticket-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.ticket-code {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    position: relative;
+    z-index: 1;
+}
+
+.ticket-discount {
+    font-size: 1.2rem;
+    margin: 0.8rem 0;
+    font-weight: 600;
+    color: var(--dark-color);
+    position: relative;
+    z-index: 1;
+}
+
+.ticket-expiry {
+    font-size: 0.9rem;
+    color: #6c757d;
+    position: relative;
+    z-index: 1;
+}
+
+.copy-btn {
+    margin-top: 1.2rem;
+    width: 100%;
+    border-radius: 30px;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .account-container {
+        padding: 1.5rem;
+    }
+    
+    .profile-section {
+        padding: 1.5rem;
+    }
+    
+    .navbar-nav {
+        margin-top: 1rem;
+    }
+    
+    .nav-link {
+        padding: 0.5rem 0;
+    }
+    
+    .order-table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+/* Animation for status badges */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.status-processing {
+    animation: pulse 2s infinite;
+}
+
+/* Edit mode styling */
+.edit-mode {
+    box-shadow: 0 0 0 2px var(--primary-color);
+}
